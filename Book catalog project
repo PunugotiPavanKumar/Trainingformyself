@@ -1,0 +1,78 @@
+use Book_Catalog_System;
+
+create table Pavan_Books(
+Book_Id int primary key ,
+title varchar(20) not null,
+ISBN varchar(20) unique not null,
+Publication_year int not null,
+publisher_id int,
+Category_id int,
+Author_name varchar(30) check (Author_name is not null)
+);
+
+
+insert into Pavan_Books values(1,'abc','123def',2001,1,1,'pavan');
+insert into Pavan_Books values(3,'abc','12def',2001,1,1,'pavan');
+insert into Pavan_Books values(4,'abc','123df',2001,1,1,'pavan');
+
+
+
+select * from Pavan_Books;
+
+alter table Pavan_Books add constraint foreign key (publisher_id) references Pavan_Publishers (publisher_id) on delete cascade;
+alter table Pavan_Books add constraint foreign key (Category_id) references Pavan_Categories (Category_id) on delete cascade;
+
+
+
+create table Pavan_Categories(
+Category_id int primary key,
+Category_name varchar(14) unique not null
+);
+insert into Pavan_Categories values(1,'English');
+
+select * from Pavan_Categories;
+
+create table Pavan_Publishers(
+publisher_id int primary key,
+publisher_name varchar(20) not null
+);
+
+insert into Pavan_Publishers values (1,'Pavan');
+
+select * from Pavan_Publishers;
+
+
+create table Pavan_Users (
+user_id int primary key,
+User_name varchar(20) not null,
+email_id varchar(20) not null,
+phone_num varchar(20) unique not null
+);
+
+insert into Pavan_Users  values(1,'pavan','pavan@gmail.com','12345678')
+;
+
+select * from Pavan_Users;
+
+
+create table Pavan_Borrowings(
+Borrower_id int primary key,
+user_id int,
+Book_Id int,
+Borrow_Date date not null,
+return_date date not null,
+constraint foreign key (user_id) references Pavan_Users (user_id) on delete cascade,
+constraint foreign key (Book_Id) references Pavan_Books (Book_Id) on delete cascade
+);
+
+select * from Pavan_Books;
+update  Pavan_Books set title ='DEF',ISBN='QWE23',Publication_year=2002,Author_name=' KIRA' WHERE Book_Id=3;
+
+SELECT * FROM Pavan_Books;
+SELECT * FROM Pavan_Categories;
+select * from Pavan_Publishers;
+select * from Pavan_Users;
+select * from Pavan_Borrowings;
+
+
+
