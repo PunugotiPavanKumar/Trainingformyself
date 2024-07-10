@@ -1,0 +1,125 @@
+/* PROJECT 2:  Book Catalog System 
+
+ 
+
+--Creating Database */ 
+
+Create database Book_catalog_system; 
+
+Use Book_catalog_system; 
+
+ 
+
+/* Creating table Categories*/ 
+
+create table Categories( 
+
+Category_Id int primary key, 
+
+Category_Name varchar(255) unique not null); 
+
+ 
+
+INSERT INTO Categories values(10,'song'),(11,'game'),(12,'music'),(13,'socialmedia'), 
+
+(14, 'sports'); 
+
+ 
+
+/*Creating table Publishers*/ 
+
+create table Publishers( 
+
+Publisher_Id int primary key, 
+
+Publisher_Name varchar(255) not null); 
+
+ 
+
+INSERT INTO Publishers values(100,'vinod'),(101,'praveen'),(102,'shyam'),(103,'uday'); 
+
+ 
+
+/*Creating table Books*/ 
+
+create table Books( 
+
+Books_Id int primary key, 
+
+Title varchar(255) not null, 
+
+ISBN varchar(255) unique not null, 
+
+Publication_year int not null, 
+
+Publisher_Id int, 
+
+Category_Id int, 
+
+Foreign key(Publisher_Id) references Publishers(Publisher_Id) on delete cascade, 
+
+Foreign key (Category_Id) references Categories(Category_Id) on delete cascade, 
+
+Author_Name varchar(255) check (Author_Name !='')); 
+
+ 
+
+insert into Books values (1,'Lion','ten10',1999,100,10,'Linga'), (2,'ion','en10',1998,102,11,'Peter'),(3,'on','en1',1997,103,13,'Smith'), (4,'Lin','ten0',1999,103,10,'Setven'); 
+
+ 
+
+/*Creating table Users*/ 
+
+create table Users( 
+
+User_Id int primary key, 
+
+Username varchar(255) not null, 
+
+Email varchar(255) not null, 
+
+Phone_Number varchar(255) unique not null); 
+
+ 
+
+INSERT INTO Users values (1000,'vinul','p@gmail.com','9807000006'),(1001,'pramodkrishna','a@gmaul.com','9845523244'),(1002,'shyamsunder','s@gmail.com','7644567867'),(1003,'demaon','d@gmail.com','652368933'); 
+
+ 
+
+/*Creating table Borrowings*/ 
+
+create table Borrowings( 
+
+Borrow_Id int primary key, 
+
+User_Id int, 
+
+Books_Id int, 
+
+Foreign key(User_Id) references Users(User_Id) on delete cascade, 
+
+Foreign key(Books_Id) references Books(Books_Id) on delete cascade, 
+
+Borrow_date date not null, 
+
+Return_date date not null 
+
+); 
+
+insert into Borrowings values (12,1000,1,'2001-12-1','2002-1-4'),  
+
+(13,1001,2,'2001-1-1','2002-10-4'), (14,1002,1,'2009-12-1','2010-1-4'),  
+
+(15,1001,3,'2010-4-2','2011-9-16'); 
+
+/*For fetching all the data from the above tables*/ 
+
+select * from Categories; 
+
+select * from Publishers; 
+
+select * from Books; 
+
+select * from Users; 
+
+select * from Borrowings; 
