@@ -111,6 +111,7 @@ select * from Users;
 
 select * from Borrowings; 
 
+/* Output  */
 
 
 mysql> select * from Categories;
