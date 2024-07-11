@@ -1,4 +1,4 @@
-/* CREATING  FARE SCHEMA */
+/* CREATING  FARE_SCHEMA */
 
 create schema Fare1;
 use Fare1;
@@ -49,5 +49,63 @@ insert into flight (destination,flight_date,flight_number,origin,fare_id,inv_id)
 select * from inventory;
 select * from fare;
 select * from flight;
+
+/* CREATING SCHEMA BOOKINGUSER */
+
+create schema BOOKINGUSER;
+USE BOOKINGUSER;
+create table booking_record (
+id INT primary key AUTO_INCREMENT, 
+booking_date timestamp,
+destination VARCHAR(255),
+price int(255), 
+flight_date VARCHAR(255), 
+flight_number VARCHAR(255), 
+origin VARCHAR(255), 
+booking_status VARCHAR(255) 
+);
+
+insert into booking_record (booking_date,destination,price,flight_date,flight_number,origin,booking_status) values 
+('1997-7-20 00','viayawada',700,'15-june-2013','hy799','podili' ,'success'),('1998-7-20 ','hyderabad',790,'15-june-2017','hydhhd799','Vijayawada' ,'success'),('2007-8-21','bangalore',600,'15-june-2010','dhfdhy799','pune' ,'fail');
+
+
+create table passenger ( pass_id INT primary key AUTO_INCREMENT, 
+first_name VARCHAR(255), 
+last_name VARCHAR(255), 
+gender VARCHAR(255),
+id INT,
+foreign key(id) references booking_record(id),
+flight_number VARCHAR(255));
+
+insert into passenger(first_name,last_name,gender,id,flight_number) values ('Pavan','Punugoti','male',1,'hy799'),('kalayan','reddy','male',1,'hy799'),('kishore','surtava','male',2,'dhfdhy799');
+
+
+select * from booking_record;
+select * from passenger;
+
+/* CREATING SCHEMA CHECKINUSER  */
+
+create schema CHECKINUSER;
+use CHECKINUSER;
+
+create table check_in_record (Check_in_id INT AUTO_INCREMENT primary key,
+booking_id INT not null, 
+check_in_time timestamp, 
+first_name varchar(255), 
+last_name varchar(255),
+flight_date varchar(255), 
+flight_number varchar(255),  
+seat_number varchar(255));
+
+insert into check_in_record (booking_id,check_in_time,first_name,last_name,flight_date,flight_number,seat_number) values
+(1,'2022-6-8','Pavan','Punugoti','15-june-2013','hy799',22),(1,'2022-6-8','kishore','surtava','15-june-2013','dhfdhy799',12),
+(2,'2024-6-8','kishore','Purna','15-june-2013','hy799',82),(2,'2022-6-8','kishore','surtava','15-june-2013','dhfdhy799',52);
+
+
+
+
+
+
+
 
 
