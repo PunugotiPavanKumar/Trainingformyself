@@ -1,0 +1,53 @@
+/* CREATING  FARE SCHEMA */
+
+create schema Fare1;
+use Fare1;
+
+create table fare2(
+id INT  PRIMARY KEY AUTO_INCREMENT ,
+fare varchar(255),
+flight_date varchar(255),
+flight_number varchar(255)) ;
+
+insert into fare2 (fare, flight_date, flight_number) values ('100', '12-JUN-18', 'B100'),('250', '12-JAN-18', 'FB100'),('1000', '12-DEC-24', 'B1QWE0'),('150', '12-NOV-18', 'YOUK100');
+
+SELECT * FROM FARE2;
+
+
+/* CREATING  SEARCHUSER SCHEMA */
+
+
+create schema SEARCHUSER;
+use searchuser;
+create table fare (
+fare_id INT primary key auto_increment, 
+currency varchar(255), 
+price varchar(255));
+
+insert into fare(CURRENCY,PRICE)  values ('USD', 101),('USD',110),('USD', 1901),('USD', 163),('USD', 151),('USD', 131);
+
+create table inventory (
+inv_id INT primary key auto_increment, 
+count INT not null);
+
+insert into inventory(count) values (190),(193),(196),(192),(191);
+
+create table flight (
+id INT primary key auto_increment , 
+destination varchar(255), 
+flight_date varchar(255), 
+flight_number varchar(255), 
+origin varchar(255),
+fare_id INT,
+CONSTRAINT FOREIGN KEY (fare_id) references fare(fare_id),
+inv_id INT,
+CONSTRAINT FOREIGN KEY (inv_id) references inventory(inv_id));
+
+insert into flight (destination,flight_date,flight_number,origin,fare_id,inv_id) values ( 'NYC','22-JAN-16','BF101', 'SFO',  2, 2),( 'DALLAS','22-JUN-17','1HY01',  'CHICAGO',  1, 1),( 'DC','12-JULY-18','JUL101',  'DALLAS',  1, 2);
+
+
+select * from inventory;
+select * from fare;
+select * from flight;
+
+
