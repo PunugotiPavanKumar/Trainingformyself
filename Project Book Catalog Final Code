@@ -9,7 +9,6 @@ Create database Book_catalog_system;
 Use Book_catalog_system; 
 
  
-
 /* Creating table Categories*/ 
 
 create table Categories( 
@@ -18,14 +17,11 @@ Category_Id int primary key,
 
 Category_Name varchar(255) unique not null); 
 
- 
-
 INSERT INTO Categories values(10,'song'),(11,'game'),(12,'music'),(13,'socialmedia'), 
 
 (14, 'sports'); 
 
  
-
 /*Creating table Publishers*/ 
 
 create table Publishers( 
@@ -34,11 +30,8 @@ Publisher_Id int primary key,
 
 Publisher_Name varchar(255) not null); 
 
- 
-
 INSERT INTO Publishers values(100,'vinod'),(101,'praveen'),(102,'shyam'),(103,'uday'); 
 
- 
 
 /*Creating table Books*/ 
 
@@ -62,11 +55,8 @@ Foreign key (Category_Id) references Categories(Category_Id) on delete cascade,
 
 Author_Name varchar(255) check (Author_Name !='')); 
 
- 
-
 insert into Books values (1,'Lion','ten10',1999,100,10,'Linga'), (2,'ion','en10',1998,102,11,'Peter'),(3,'on','en1',1997,103,13,'Smith'), (4,'Lin','ten0',1999,103,10,'Setven'); 
 
- 
 
 /*Creating table Users*/ 
 
@@ -80,12 +70,9 @@ Email varchar(255) not null,
 
 Phone_Number varchar(255) unique not null); 
 
- 
-
 INSERT INTO Users values (1000,'vinul','p@gmail.com','9807000006'),(1001,'pramodkrishna','a@gmaul.com','9845523244'),(1002,'shyamsunder','s@gmail.com','7644567867'),(1003,'demaon','d@gmail.com','652368933'); 
 
  
-
 /*Creating table Borrowings*/ 
 
 create table Borrowings( 
@@ -123,3 +110,66 @@ select * from Books;
 select * from Users; 
 
 select * from Borrowings; 
+
+
+
+mysql> select * from Categories;
++-------------+---------------+
+| Category_Id | Category_Name |
++-------------+---------------+
+|          11 | game          |
+|          12 | music         |
+|          13 | socialmedia   |
+|          10 | song          |
+|          14 | sports        |
++-------------+---------------+
+5 rows in set (0.00 sec)
+
+mysql>
+mysql> select * from Publishers;
++--------------+----------------+
+| Publisher_Id | Publisher_Name |
++--------------+----------------+
+|          100 | vinod          |
+|          101 | praveen        |
+|          102 | shyam          |
+|          103 | uday           |
++--------------+----------------+
+4 rows in set (0.00 sec)
+
+mysql>
+mysql> select * from Books;
++----------+-------+-------+------------------+--------------+-------------+-------------+
+| Books_Id | Title | ISBN  | Publication_year | Publisher_Id | Category_Id | Author_Name |
++----------+-------+-------+------------------+--------------+-------------+-------------+
+|        1 | Lion  | ten10 |             1999 |          100 |          10 | Linga       |
+|        2 | ion   | en10  |             1998 |          102 |          11 | Peter       |
+|        3 | on    | en1   |             1997 |          103 |          13 | Smith       |
+|        4 | Lin   | ten0  |             1999 |          103 |          10 | Setven      |
++----------+-------+-------+------------------+--------------+-------------+-------------+
+4 rows in set (0.00 sec)
+
+mysql>
+mysql> select * from Users;
++---------+---------------+-------------+--------------+
+| User_Id | Username      | Email       | Phone_Number |
++---------+---------------+-------------+--------------+
+|    1000 | vinul         | p@gmail.com | 9807000006   |
+|    1001 | pramodkrishna | a@gmaul.com | 9845523244   |
+|    1002 | shyamsunder   | s@gmail.com | 7644567867   |
+|    1003 | demaon        | d@gmail.com | 652368933    |
++---------+---------------+-------------+--------------+
+4 rows in set (0.00 sec)
+
+mysql>
+mysql> select * from Borrowings;
++-----------+---------+----------+-------------+-------------+
+| Borrow_Id | User_Id | Books_Id | Borrow_date | Return_date |
++-----------+---------+----------+-------------+-------------+
+|        12 |    1000 |        1 | 2001-12-01  | 2002-01-04  |
+|        13 |    1001 |        2 | 2001-01-01  | 2002-10-04  |
+|        14 |    1002 |        1 | 2009-12-01  | 2010-01-04  |
+|        15 |    1001 |        3 | 2010-04-02  | 2011-09-16  |
++-----------+---------+----------+-------------+-------------+
+4 rows in set (0.00 sec)
+
