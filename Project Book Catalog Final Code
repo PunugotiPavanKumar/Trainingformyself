@@ -174,3 +174,10 @@ mysql> select * from Borrowings;
 +-----------+---------+----------+-------------+-------------+
 4 rows in set (0.00 sec)
 
+
+
+select Publisher_Name,Category_Name,Username,email,Phone_Number,title,ISBN,publication_year,Author_Name,Borrow_Id,
+Borrow_date,return_date from books  join Publishers on (books.publisher_id=Publishers.publisher_id)
+join categories  on(books.category_id=categories.category_id)
+join Borrowings  on(books.Books_Id=Borrowings.Books_Id) join users  on(Borrowings.user_id=users.user_id);
+
