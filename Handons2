@@ -1,0 +1,1055 @@
+Display months 
+
+package monday; 
+
+import java.util.*; 
+
+ 
+
+public class Months { 
+
+public static void main(String[] args) { 
+
+ Scanner ok =new Scanner(System.in); 
+
+  
+
+ System.out.println("Enter the number:"); 
+
+  
+
+ int month=ok.nextInt(); 
+
+  
+
+ if( month==1) 
+
+ System.out.println("Month: January"); 
+
+ else if (month==2) 
+
+ System.out.println("month: February"); 
+
+  
+
+ else if (month==3) 
+
+ System.out.println("month: march"); 
+
+ else if (month==4) 
+
+ System.out.println("month: April"); 
+
+ else if (month==5) 
+
+ System.out.println("month: may"); 
+
+ else if (month==6) 
+
+ System.out.println("month: June"); 
+
+ else if (month==7) 
+
+ System.out.println("month: July"); 
+
+ else if (month==8) 
+
+ System.out.println("month: august"); 
+
+ else if (month==9) 
+
+ System.out.println("month: September"); 
+
+ else if (month==10) 
+
+ System.out.println("month: October"); 
+
+ else if (month==11) 
+
+ System.out.println("month: November"); 
+
+ else if (month==12) 
+
+ System.out.println("month: December"); 
+
+  
+
+ else 
+
+ System.out.println("invalid input"); 
+
+} 
+
+} 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ Calculated result 
+
+package monday; 
+
+import java.util.*; 
+
+ 
+
+public class Sum { 
+
+	public static void main(String[] args) { 
+
+ 
+
+		Scanner ok =new Scanner(System.in); 
+
+		System.out.println("Enter the first Number:"); 
+
+		int num1=ok.nextInt(); 
+
+		System.out.println("Enter the second Number:"); 
+
+		int num2=ok.nextInt(); 
+
+ 
+
+		System.out.println("Enter the Operator:"); 
+
+ 
+
+		char operator = ok.next().charAt(0); 
+
+ 
+
+		switch(operator) { 
+
+		case'+': 
+
+			System.out.println(" "+(num1+num2)); 
+
+			break; 
+
+ 
+
+		case'-': 
+
+			System.out.println(" "+(num1-num2)); 
+
+			break; 
+
+ 
+
+		case'*': 
+
+			System.out.println(" "+(num1*num2)); 
+
+			break; 
+
+ 
+
+		case'/': 
+
+			System.out.println(" "+(num1/num2)); 
+
+			break; 
+
+ 
+
+	default: 
+
+	 
+
+System.out.println("invalid"); 
+
+ 
+
+} 
+
+	} 
+
+} 
+
+Grades 
+
+ 
+
+ 
+
+package monday; 
+
+import java.util.*; 
+
+ 
+
+public class Grade { 
+
+public static void main(String[] args) { 
+
+ Scanner ok =new Scanner(System.in); 
+
+  
+
+ System.out.println("Enter the number:"); 
+
+  
+
+ int percentage =ok.nextInt(); 
+
+  
+
+ if( percentage>=60) 
+
+ System.out.println("Grade A"); 
+
+ else if (percentage>=45) 
+
+ System.out.println("Grade B"); 
+
+  
+
+ else if (percentage>=35) 
+
+ System.out.println("Grade C"); 
+
+  
+
+ else  
+
+ System.out.println("Fail"); 
+
+  
+
+} 
+
+} 
+
+ 
+
+ 
+
+ 
+
+EVEN OR ODD 
+
+package monday; 
+
+ 
+
+import java.util.*; 
+
+public class Even_or_odd { 
+
+ 
+
+	public static void main(String[] args) { 
+
+		Scanner pk= new Scanner(System.in); 
+
+		System.out.println("Enter the number:"); 
+
+		int num=pk.nextInt(); 
+
+		if(num%2==0) 
+
+		System.out.println("EVEN"); 
+
+	else  
+
+		System.out.println("ODD"); 
+
+	} 
+
+} 
+
+ 
+
+ 
+
+ Largest among three number: 
+
+ 
+
+package monday; 
+
+import java.util.*; 
+
+public class Largest_among_threenumber { 
+
+	public static void main(String[] args) { 
+
+		Scanner pk=new Scanner(System.in); 
+
+		System.out.println("Enter the 3 numbers:"); 
+
+ 
+
+		int num1=pk.nextInt(); 
+
+		int num2=pk.nextInt(); 
+
+		int num3=pk.nextInt(); 
+
+ 
+
+		if (num1>num2 && num1>num3) 
+
+			System.out.println(" "+num1); 
+
+		else if (num2>num1 && num2>num3) 
+
+			System.out.println(" "+num2); 
+
+		else 
+
+			System.out.println(""+num3); 
+
+	} 
+
+ 
+
+} 
+
+ 
+
+Prime number form 1 to n: 
+
+package monday; 
+
+import java.util.*; 
+
+public class Prime { 
+
+	public static void main(String[] args) { 
+
+		Scanner pk = new Scanner(System.in); 
+
+		System.out.print("Enter the N value: "); 
+
+		int N = pk.nextInt(); 
+
+		pk.close(); 
+
+ 
+
+		System.out.print("Prime numbers from 1 to " + N + " are: "); 
+
+		for (int i = 2; i <= N; i++) { 
+
+			if (isPrime(i)) { 
+
+				System.out.print(i + " "); 
+
+			} 
+
+		} 
+
+	} 
+
+ 
+
+	public static boolean isPrime(int number) { 
+
+		if (number <= 1) { 
+
+			return false; 
+
+		} 
+
+		for (int i = 2; i <= Math.sqrt(number); i++) { 
+
+			if (number % i == 0) { 
+
+				return false; 
+
+			} 
+
+		} 
+
+		return true; 
+
+	} 
+
+} 
+
+ 
+
+Leap Year: 
+
+ 
+
+package monday; 
+
+import java.util.*; 
+
+public class Leap { 
+
+	public static void main(String[] args) { 
+
+		Scanner pk = new Scanner(System.in); 
+
+		System.out.println("enter the year"); 
+
+		int year = pk.nextInt(); 
+
+		if (((year % 4 == 0) && (year % 100!= 0)) || (year%400 == 0)) 
+
+ 
+
+			System.out.println("year is a leap year"); 
+
+		else 
+
+			System.out.println("year is not a leap year");} 
+
+ 
+
+} 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Reversing the digits: 
+
+package monday; 
+
+import java.util.*; 
+
+public class ReverseNumber { 
+
+	public static void main(String[] args) { 
+
+		Scanner pk=new Scanner(System.in); 
+
+		System.out.print("Enter the Number: "); 
+
+		int number = pk.nextInt(); 
+
+		int ReversedNumber = 0; 
+
+		while (number != 0) { 
+
+			int digit = number % 10; 
+
+			ReversedNumber = ReversedNumber * 10 + digit; 
+
+			number /= 10; 
+
+		} 
+
+		System.out.println("the reversed numbers are :"+ReversedNumber); 
+
+ 
+
+	}	 
+
+ 
+
+} 
+
+ 
+
+Armstrong: 
+
+package monday; 
+
+import java.util.*; 
+
+public class Armstrong { 
+
+	public static void main(String[] args) { 
+
+		Scanner pk = new Scanner(System.in); 
+
+		System.out.print("Enter the start range: "); 
+
+		int num1 = pk.nextInt(); 
+
+		System.out.print("Enter the end range: "); 
+
+		int num2 = pk.nextInt(); 
+
+ 
+
+		for(int i=num1; i<=num2; i++) { 
+
+			int b = i; 
+
+			int digits = 0; 
+
+			while(b != 0) { 
+
+				int e = b%10; 
+
+				digits++; 
+
+				b = b/10; 
+
+			} 
+
+			int a = i; 
+
+			int result = 0; 
+
+			while(a != 0) { 
+
+				int r = a%10; 
+
+				result = result + (int)Math.pow(r, digits); 
+
+				a = a/10; 
+
+			} 
+
+			if(result == i) { 
+
+				System.out.println(result); 
+
+			} 
+
+		} 
+
+ 
+
+ 
+
+	} 
+
+ 
+
+} 
+
+ 
+
+Vowels or constant 
+
+package monday; 
+
+import java.util.*; 
+
+public class Vowels { 
+
+	public static void main(String[] args) { 
+
+		Scanner pk= new Scanner(System.in); 
+
+		System.out.println("Enter the letter:"); 
+
+		char letter=pk.next().charAt(0); 
+
+		letter=Character.toLowerCase(letter); 
+
+ 
+
+		if (letter=='a'||letter=='e'||letter=='i'||letter=='o'||letter=='u') 
+
+			System.out.println("Vowel"); 
+
+		else 
+
+			System.out.println("Constant"); 
+
+	} 
+
+ 
+
+} 
+
+ 
+
+Simple interest: 
+
+package monday; 
+
+import java.util.*; 
+
+public class Simple_interest { 
+
+	public static void main(String[] args) { 
+
+		Scanner pk=new Scanner(System.in); 
+
+		System.out.println("Enter the total amount:"); 
+
+		double p =pk.nextDouble(); // p= total amount given 
+
+		System.out.println("Enter the total duration in months:"); 
+
+		double t=pk.nextDouble(); //t= time duration in months 
+
+		System.out.println("Enter the rate of interest:"); 
+
+		double r=pk.nextDouble(); //r= rate of interest 
+
+ 
+
+		double result =(p*t*r)/100; // formula for simple interest 
+
+ 
+
+		System.out.println("The simple interest id:"+result); 
+
+ 
+
+	}} 
+
+ 
+
+ 
+
+ Perimeter of Rectangle: 
+
+package monday; 
+
+import java.util.*; 
+
+ 
+
+public class Perimeter { 
+
+	public static void main(String[] args) { 
+
+		Scanner pk=new Scanner (System.in); 
+
+		System.out.println("Enter the length of the Rectangle:"); 
+
+		int length=pk.nextInt(); 
+
+		System.out.println("Enter the breath of the Rectangle:"); 
+
+		int breath=pk.nextInt(); 
+
+ 
+
+		int perimeter=2*(length+breath); 
+
+		System.out.println(""+perimeter); 
+
+	} 
+
+ 
+
+} 
+
+ 
+
+Power of each: 
+
+package monday; 
+
+import java.util.*; 
+
+public class Power { 
+
+ 
+
+	public static int power(int base, int exponent) 
+
+	{ 
+
+		int result = 1; 
+
+		for (int i = 0; i < exponent; i++)  
+
+		{ 
+
+			result =result * base; 
+
+		} 
+
+		return result; 
+
+	} 
+
+	public static void main(String[] args) { 
+
+		Scanner pk = new Scanner(System.in); 
+
+ 
+
+		System.out.print("Enter the base number: "); 
+
+		int base = pk.nextInt(); 
+
+		System.out.print("Enter the exponent number: "); 
+
+		int exponent = pk.nextInt(); 
+
+		int powerResult = power(base, exponent); 
+
+		System.out.println(base + " to the power of " + exponent + " is: " + powerResult); 
+
+	} 
+
+} 
+
+ 
+
+Factorial: 
+
+package monday; 
+
+import java.util.*; 
+
+public class Factorial { 
+
+	public static void main(String[] args) { 
+
+		Scanner pk=new Scanner(System.in); 
+
+		System.out.println("Enter the number:"); 
+
+		int number=pk.nextInt(); 
+
+ 
+
+		int factorial=1; 
+
+		for(int i =1;i<=number;i++) { 
+
+			factorial*=i; 
+
+		} 
+
+		System.out.println("The factorial for "+number+"is:"+factorial); 
+
+	} 
+
+} 
+
+ 
+
+ 
+
+Right triangle: 
+
+package monday; 
+
+import java.util.*; 
+
+ 
+
+public class Right_triangle { 
+
+	public static void main(String[] args) { 
+
+		Scanner pk=new Scanner(System.in); 
+
+		System.out.println("Enter the value:"); 
+
+		int n=pk.nextInt(); 
+
+		for (int k=0;k<=n;k++) { 
+
+			for (int p=1; p<=k; p++) { 
+
+                        System.out.print("* "); 
+
+			} 
+
+			System.out.println(); 
+
+		} 
+
+	} 
+
+} 
+
+ 
+
+Reverse pyramid: 
+
+package monday; 
+
+import java.util.*; 
+
+public class ReversePyramid { 
+
+	public static void main(String[] args) { 
+
+		Scanner pk=new Scanner(System.in); 
+
+		System.out.println("Enter the number:"); 
+
+		int num =pk.nextInt(); 
+
+ 
+
+		for(int i=num; i>= 1;i--){ 
+
+ 
+
+			for (int j=num;j>i;j--) { 
+
+				System.out.print(" "); 
+
+			} 
+
+ 
+
+			for (int k=1;k<=2 * i - 1;k++) { 
+
+				System.out.print("*"); 
+
+			} 
+
+			System.out.println(); 
+
+		} 
+
+} 
+
+} 
+
+ 
+
+ 
+
+ 
+
+ 
+
+UpperStarTriangle 
+
+package monday; 
+
+import java.util.*; 
+
+public class UpperStarTriangle { 
+
+	public static void main(String[] args) { 
+
+		Scanner pk = new Scanner(System.in); 
+
+		System.out.print("Enter a number: "); 
+
+		int num = pk.nextInt(); 
+
+		for(int i=1; i<=num; i++) { 
+
+			for(int j=1; j<=num-i; j++) { 
+
+				System.out.print(" "); 
+
+			} 
+
+			for(int k=1; k<=i; k++) { 
+
+				System.out.print("*" + " "); 
+
+			} 
+
+			System.out.println(); 
+
+		} 
+
+	} 
+
+} 
+
+ 
+
+ 
+
+Complex: 
+
+package monday; 
+
+import java.util.Scanner; 
+
+public class Complex { 
+
+	public static void main(String[] args) { 
+
+		Scanner pk=new Scanner(System.in); 
+
+		System.out.println("Enter the first real number:"); 
+
+		int a=pk.nextInt(); 
+
+		System.out.println("Enter the first image value:"); 
+
+		int b=pk.nextInt(); 
+
+		 
+
+		System.out.println("Enter the second real value:"); 
+
+		int c=pk.nextInt(); 
+
+		 
+
+		System.out.println("Enter the second imaginary value:"); 
+
+		int d=pk.nextInt(); 
+
+		 
+
+		int real1=a+c; 
+
+		int imaginary=b+d; 
+
+		 
+
+		System.out.println(real1+"+i"+imaginary); 
+
+			 
+
+		 
+
+	} 
+
+ 
+
+} 
+
+ 
+
+Diamond Star 
+
+package monday; 
+
+import java.util.*; 
+
+public class Diamond { 
+
+	public static void main(String[] args) { 
+
+		Scanner pk = new Scanner(System.in); 
+
+		System.out.print("Enter a number: "); 
+
+		int num = pk.nextInt(); 
+
+		int a = 0; 
+
+		int b = 0; 
+
+		for(int m=1; m<=num*2-2; m=m+2) { 
+
+			b++; 
+
+			for(int l=1; l<=num-b; l++) { 
+
+				System.out.print(" "); 
+
+			} 
+
+			for(int n=1; n<=m; n++) { 
+
+				System.out.print("*" + " "); 
+
+			} 
+
+			System.out.println(); 
+
+		} 
+
+		for(int i=(num*2)-1; i>=1; i=i-2) { 
+
+			a++; 
+
+			for(int k=1; k<a && i<(num*2)-1; k++) { 
+
+				System.out.print(" "); 
+
+			} 
+
+			for(int j=1; j<=i; j++) { 
+
+				System.out.print("*" + " "); 
+
+			} 
+
+			System.out.println(); 
+
+		} 
+
+	} 
+
+	} 
+
+ 
+
+Square Pattern 
+
+package monday; 
+
+import java.util.*; 
+
+ 
+
+public class SquarePattern { 
+
+	 
+
+		public static void main(String[] args) { 
+
+			Scanner p1 = new Scanner(System.in); 
+
+			System.out.print("Enter a number: "); 
+
+			int num = p1.nextInt(); 
+
+			 
+
+			for(int i=0; i<num; i++) { 
+
+				 if(i == 0 || i == num-1) { 
+
+					 for(int j=0; j<num; j++) { 
+
+						 System.out.print("*" + " "); 
+
+					 } 
+
+				 } 
+
+				 else { 
+
+					 System.out.print("*" + " "); 
+
+					 for(int k=1; k<num-1; k++) { 
+
+						 System.out.print(" "); 
+
+					 } 
+
+					 System.out.print("*" + " "); 
+
+				 } 
+
+				 System.out.println(); 
+
+			} 
+
+		} 
+
+		} 
+
+		  
+
+ 
+
+ 
+
+ 
